@@ -1,0 +1,81 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #111;
+}
+
+.container {
+    max-width: 600px;
+}
+
+.img::before {
+    content: '';
+    display: block;
+    padding-top: 50%;
+}
+
+.character {
+    position: relative;
+    top: 6rem;
+    color: #fff;
+    background-color: #111;
+    opacity: 0.8;
+    box-shadow: 0px 0px 0px 3px #fff;
+    border-radius: 10px;
+    width: 28%;
+    margin-right: 7px;
+    text-align: center;
+}
+
+.name {
+    border-bottom: 3px solid white;
+}
+
+.monster_image {
+    display: flex;
+    position: relative;
+    top: 7rem;
+    height: max-content;
+}
+
+.monster_image img {
+    max-width: calc(100% - 1px * 2 - 0.25em * 2);
+    margin: auto;
+}
+
+.command {
+    position: relative;
+    top: 8rem;
+    height: max-content;
+    padding: 9px;
+    background-color: #333;
+    opacity: 0.8;
+    box-shadow: 0px 0px 0px 3px #fff;
+    border-radius: 10px;
+    text-align: center;
+    margin-bottom: 3px;
+}
+
+.command button {
+    background-color: gray;
+    color: white;
+    border-radius: 5px;
+    padding: 5px;
+    width: 45%;
+    cursor: pointer;
+}
+
+.message {
+    position: relative;
+    top: 2rem;
+    height: 6rem;
+    padding: 9px;
+    color: #fff;
+    background-color: #111;
+    opacity: 0.8;
+    box-shadow: 0px 0px 0px 3px #fff;
+    border-radius: 10px;
+}
