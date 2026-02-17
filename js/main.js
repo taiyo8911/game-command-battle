@@ -71,6 +71,7 @@ function initDisplay() {
     // 起動時 コマンド画面とメッセージ画面は非表示
     document.getElementById("command").style.visibility = "hidden";
     document.getElementById("message").style.visibility = "hidden";
+    document.getElementById("message").style.pointerEvents = "none";
 }
 
 // モンスター出現の描画
@@ -100,11 +101,11 @@ function startGame() {
 function DisplayMessage() {
     let e = document.getElementById("message");
     e.style.visibility = "visible";
+    e.style.pointerEvents = "auto";
 
     // 以前のメッセージをすべて消去する
-    let removeObj = document.getElementById('message');
-    while (removeObj.firstChild) {
-        removeObj.removeChild(removeObj.firstChild);
+    while (e.firstChild) {
+        e.removeChild(e.firstChild);
     }
 }
 
@@ -113,6 +114,7 @@ function DisplayCommand() {
     // メッセージ画面を非表示にする
     let e = document.getElementById("message");
     e.style.visibility = "hidden";
+    e.style.pointerEvents = "none";
 
     let element = document.getElementById("command");
     element.style.visibility = "visible";
@@ -122,6 +124,7 @@ function DisplayCommand() {
 function HiddenMessage() {
     let e = document.getElementById("message");
     e.style.visibility = "hidden";
+    e.style.pointerEvents = "none";
 }
 
 
@@ -136,6 +139,12 @@ initDisplay();
 
 // ゲームスタート
 startGame();
+
+// コマンドボタンにイベントリスナーを登録
+document.getElementById("attack").addEventListener("click", function (e) { command(e); });
+document.getElementById("tool").addEventListener("click", function (e) { command(e); });
+document.getElementById("recovery").addEventListener("click", function (e) { command(e); });
+document.getElementById("run").addEventListener("click", function (e) { command(e); });
 
 // 押されたコマンドのid名で分岐処理
 function command(e) {
