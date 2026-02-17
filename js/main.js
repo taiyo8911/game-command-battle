@@ -138,16 +138,16 @@ initDisplay();
 startGame();
 
 // 押されたコマンドのid名で分岐処理
-function command() {
+function command(e) {
     // コマンド画面を非表示にする
-    let e = document.getElementById("command");
-    e.style.visibility = "hidden";
+    let el = document.getElementById("command");
+    el.style.visibility = "hidden";
 
     // メッセージ画面要素を表示
     DisplayMessage();
 
     // 押されたコマンド別に分岐処理
-    switch (window.event.target.id) {
+    switch (e.target.id) {
         // 攻撃
         case 'attack':
             // ダメージの計算
